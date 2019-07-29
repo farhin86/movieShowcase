@@ -1,0 +1,96 @@
+.header-filter {
+	width: 100%;
+	position: fixed;
+}
+.header-movie {
+	display: flex;
+	justify-content: space-between;
+	padding: 5px 10px 8px 5px;
+	width: 100%;
+	background-color: black;
+	height: 46px;
+}
+.header-logo-button {
+	display: flex;
+	align-items: center;
+}
+.header-logo {
+}
+.button-coming {
+	background-color: #16dcb1d1;
+	color: white;
+}
+.button-showing {
+	background-color: #383532;
+	color: #f5eaea;
+}
+.button-showing,
+.button-coming {
+	font-family: inherit;
+	font-size: 9px;
+	text-align: center;
+	line-height: 25px;
+	font-weight: 500;
+	width: 100px;
+	height: 25px;
+	border-radius: 3px;
+	margin-left: 13px;
+	cursor: pointer;
+}
+.header-cancel-button {
+	display: flex;
+	align-items: center;
+	padding-right: 20px;
+}
+.popular,
+.english,
+.genres {
+	font-family: unset;
+	font-size: 11px;
+	text-align: center;
+	line-height: 20px;
+	font-weight: 500;
+	width: 110px;
+	height: 22px;
+	padding: 0px 5px 0px 8px;
+	border-radius: 2px;
+	margin-right: 13px;
+	border: 1px solid #16dcb1d1;
+	color: #16dcb1d1;
+	cursor: pointer;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.popular {
+}
+.english {
+}
+.genres {
+}
+.cancel {
+	cursor: pointer;
+}
+.applied-filter {
+	background-color: #212121;
+	color: #847f7f;
+	display: flex;
+	height: 40px;
+	align-items: center;
+	font-family: unset;
+	font-size: 11px;
+	font-weight: 500;
+	padding: 5px 10px 8px 20px;
+}
+.filters {
+	background-color: #383430;
+	color: #f5eaea;
+	margin-left: 5px;
+	border-radius: 13px;
+	width: 80px;
+	height: 22px;
+	font-size: 10px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}

@@ -1,6 +1,6 @@
 .video-page {
 	width: 100%;
-	background-color: #00000059;
+	background-color: #ffffff91;
 	padding: 2% 2% 2% 2%;
 	display: flex;
 	height: 450px;
@@ -25,17 +25,42 @@
 	color: white;
 }
 .details-text {
+	margin: 5px 10px 0px 10px;
 }
 .details-title-cancel {
 	display: flex;
 	justify-content: space-between;
 }
+.details-title {
+	font-size: 17px;
+	font-weight: 600;
+}
 .details-language {
 	text-align: left;
+	font-size: 11px;
+	font-weight: 400;
+	margin-top: 2%;
+	margin-bottom: 2%;
+}
+.type {
+	display: flex;
+}
+.type1 {
+	height: 16px;
+	width: 60px;
+	text-align: center;
+	border: 1px solid white;
+	line-height: 14px;
+	border-radius: 14px;
+	font-size: 8px;
+	margin-bottom: 3%;
+	margin-right: 4%;
+	font-weight: 400;
 }
 .details-like {
 	display: flex;
-	align-items: left;
+	align-items: center;
+	margin-bottom: 3%;
 }
 .details-desc {
 	text-align: left;
@@ -43,7 +68,47 @@
 .details-text {
 	text-align: left;
 }
+.details-desc {
+	font-size: 10px;
+	font-weight: 400;
+	margin-top: 2px;
+}
+.more {
+	font-size: 12px;
+	font-weight: 500;
+	margin-top: 2px;
+	color: #16dcb1d1;
+	cursor: pointer;
+}
 .details-icon {
 	display: flex;
 	justify-content: space-between;
+	padding: 0% 10% 5%;
+}
+.likes {
+	margin-right: 3%;
+	height: 25px;
+	width: 25px;
+}
+.like {
+	margin-right: 7%;
+}
+.percent {
+	font-size: 15px;
+	font-weight: 500;
+}
+.vote {
+	font-size: 9px;
+}
+.date-img {
+	margin-right: 3%;
+}
+.bla-date {
+}
+.date {
+	font-size: 15px;
+	font-weight: 500;
+}
+.year {
+	font-size: 9px;
 }

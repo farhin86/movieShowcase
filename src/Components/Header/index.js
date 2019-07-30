@@ -23,7 +23,7 @@ export default class Header extends Component {
 							English <img src={dropArrow} alt='dropArrow' className='header-dropArrow' />
 						</div>
 						<div className='genres'>
-							Genres <img src={dropArrow} alt='dropArrow' className='header-dropArrow' />
+							All Genres <img src={dropArrow} alt='dropArrow' className='header-dropArrow' />
 						</div>
 						<img src={cancel} alt='cancel' className='cancel' />
 					</div>
@@ -32,6 +32,9 @@ export default class Header extends Component {
 					<div className='applied-filter-text'>Applied Filters:</div>
 					<div className='filters'>
 						English <img src={cancelFilter} alt='cancelFilter' className='header-cancelFilter' />
+					</div>
+					<div className='filters'>
+						Popular <img src={cancelFilter} alt='cancelFilter' className='header-cancelFilter' />
 					</div>
 				</div>
 			</div>

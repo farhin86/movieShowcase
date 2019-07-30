@@ -1,6 +1,16 @@
 .trailers-page {
-	height: 100vh;
+	height: 100%;
 	width: 100%;
 	background-color: #212121;
 	padding-top: 120px;
+	display: flex;
+	flex-flow: row wrap;
+}
+.video-banner {
+	width: auto;
+	height: auto;
+	margin-left: 2%;
+	margin-right: 2%;
+	margin-bottom: 3%;
+	margin-top: 1%;
 }

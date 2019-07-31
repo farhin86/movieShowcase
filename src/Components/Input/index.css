@@ -1,0 +1,39 @@
+.input-body {
+	margin: 10% 10% 10% 10%;
+}
+/* .input-box {
+	margin: 10% 0% 10% 0%;
+	border: 2px solid lightslategrey;
+	height: 40px;
+	line-height: 38px;
+	border-radius: 8px;
+	
+} */
+.input-output {
+}
+input {
+	margin: 10% 0% 10% 0%;
+	border: 2px solid #16dcb1d1;
+	height: 40px;
+	line-height: 38px;
+	border-radius: 8px;
+	outline: none;
+	width: 70%;
+	font-size: 18px;
+}
+.input-submit {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+}
+.submit {
+	width: 20%;
+	height: 40px;
+	background-color: #16dcb1d1;
+	border-radius: 8px;
+	color: white;
+	text-align: center;
+	line-height: 40px;
+	cursor: pointer;
+}

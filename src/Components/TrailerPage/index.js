@@ -62,7 +62,7 @@ export default class TrailerPage extends Component {
 						);
 					})}
 				<VideoDetails
-					playVideoCode={playVideoCode}
+					playVideoCode={playVideoCode ? playVideoCode : 'https://www.youtube.com/watch?v=BuZRJZ5FVM4'}
 					closeVideo={() => {
 						this.setState({ playId: null });
 					}}

@@ -6,13 +6,27 @@ import maybe from '../../assets/images/maybe.png';
 import wontWatch from '../../assets/images/wontwatch.png';
 import likes from '../../assets/images/likes.png';
 import date from '../../assets/images/date.png';
+import YouTube from 'react-youtube';
+import PropTypes from 'prop-types';
 
 export default class VideoDetails extends Component {
 	render() {
 		let { playVideoCode } = this.props;
+
+		let videoId = playVideoCode.split('=')[1].split('&')[0];
+		console.log('playVideoCode', playVideoCode, videoId);
+		const opts = {
+			height: '450px',
+			width: '100%',
+			playerVars: {
+				autoplay: 1
+			}
+		};
 		return (
 			<div className='video-page'>
-				<div className='video'>video</div>
+				<div className='video'>
+					<YouTube videoId={videoId} opts={opts} onReady={this._onReady} />
+				</div>
 				<div className='video-details'>
 					<div className='details-text'>
 						<div className='details-title-cancel'>
@@ -53,3 +67,10 @@ export default class VideoDetails extends Component {
 		);
 	}
 }
+
+// VideoDetails.defaultProps = {
+// 	playVideoCode: 'KJQjOozn8pk'
+// };
+// VideoDetails.propTypes = {
+// 	playVideoCode: PropTypes.string
+// };

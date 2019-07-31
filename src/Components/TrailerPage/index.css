@@ -14,5 +14,5 @@
 .each-row {
 	width: 100%;
 	display: flex;
-	/* flex-flow:  */
+	justify-content: space-evenly;
 }

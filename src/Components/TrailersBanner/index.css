@@ -1,10 +1,16 @@
 .trailer-banner-name {
-	position: relative;
+	/* position: relative; */
+	width: auto;
+	height: auto;
+	margin-left: 2%;
+	margin-right: 2%;
+	margin-bottom: 3%;
+	margin-top: 1%;
 }
 
 .trailers-banner {
 	height: 250px;
-	width: 180px;
+	width: 182px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;

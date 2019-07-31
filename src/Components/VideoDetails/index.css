@@ -1,5 +1,5 @@
 .video-page {
-	width: 100%;
+	width: 96%;
 	background-color: #ffffff91;
 	padding: 2% 2% 2% 2%;
 	display: flex;
@@ -14,7 +14,7 @@
 .video {
 	width: 60%;
 	margin-right: 2%;
-	background-color: white;
+	background-color: transparent;
 }
 .video-details {
 	width: 38%;

@@ -10,10 +10,10 @@ export default class TrailerBanner extends Component {
 		this.setState({
 			playTrailer: true
 		});
-		this.props.playVideoCode(this.props.data['TrailerURL']);
+		this.props.playVideoCode(this.props.data['TrailerURL'], this.props.indexFirst);
 	};
 	render() {
-		let { image, data, videoClosed, id } = this.props;
+		let { image, data, videoClosed, indexSecond, indexFirst } = this.props;
 
 		let monthCap = data['DispReleaseDate']
 				.split(' ')[0]
@@ -23,13 +23,14 @@ export default class TrailerBanner extends Component {
 			month = monthCap.toLowerCase(),
 			monthFinal = month.charAt(0).toUpperCase() + month.substring(1),
 			day = data['DispReleaseDate'].split(' ')[1].substr(0, 2);
-		// console.log('data', data);
+		console.log('TrailerBanner', data);
+		// debugger;
 		return (
 			<div className='trailer-banner-name'>
 				<div
 					className='trailers-banner'
 					style={
-						this.state.playTrailer && videoClosed === id
+						this.state.playTrailer && videoClosed === indexSecond
 							? {
 									backgroundImage: `url('https://in.bmscdn.com/events/moviecard/${image}.jpg')`,
 									border: '2.5px solid #16dcb1d1'
@@ -46,7 +47,7 @@ export default class TrailerBanner extends Component {
 					</div>
 					<div className='icon'>
 						<div />
-						{this.state.playTrailer && videoClosed === id ? (
+						{this.state.playTrailer && videoClosed === indexSecond ? (
 							''
 						) : (
 							<img src={playIcon} alt='' className='play-icon' onClick={this.playTrailer} />

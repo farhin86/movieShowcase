@@ -7,14 +7,12 @@ import wontWatch from '../../assets/images/wontwatch.png';
 import likes from '../../assets/images/likes.png';
 import date from '../../assets/images/date.png';
 import YouTube from 'react-youtube';
-import PropTypes from 'prop-types';
 
 export default class VideoDetails extends Component {
 	render() {
-		let { playVideoCode } = this.props;
+		let { playVideoCode, videoDetails } = this.props;
 
 		let videoId = playVideoCode.split('=')[1].split('&')[0];
-		console.log('playVideoCode', playVideoCode, videoId);
 		const opts = {
 			height: '450px',
 			width: '100%',
@@ -22,6 +20,16 @@ export default class VideoDetails extends Component {
 				autoplay: 1
 			}
 		};
+		let genre = videoDetails.EventGenre.split('|');
+		let monthCap = videoDetails['DispReleaseDate']
+				.split(' ')[0]
+				.split('')
+				.slice(0, 3)
+				.join(''),
+			month = monthCap.toLowerCase(),
+			monthFinal = month.charAt(0).toUpperCase() + month.substring(1),
+			day = videoDetails['DispReleaseDate'].split(' ')[1].substr(0, 2),
+			year = videoDetails['DispReleaseDate'].split(' ')[2];
 		return (
 			<div className='video-page'>
 				<div className='video'>
@@ -30,25 +38,29 @@ export default class VideoDetails extends Component {
 				<div className='video-details'>
 					<div className='details-text'>
 						<div className='details-title-cancel'>
-							<div className='details-title'>Venom</div>
+							<div className='details-title'>{videoDetails.EventName}</div>
 							<img src={cancel} alt='cancel' className='cancel' onClick={this.props.closeVideo} />
 						</div>
-						<div className='details-language'>ENGLISH</div>
+						<div className='details-language'>{videoDetails.EventLanguage}</div>
 						<div className='type'>
-							<div className='type1'>ACTION</div>
-							<div className='type1'>SCIFI</div>
+							{genre &&
+								genre.map(name => {
+									return <div className='type1'>{name}</div>;
+								})}
 						</div>
 
 						<div className='details-like'>
 							<img src={likes} alt='likes' className='likes' onClick={this.props.closeVideo} />
 							<div className='like'>
-								<div className='percent'>100%</div>
-								<div className='vote'>92936 votes</div>
+								<div className='percent'>{videoDetails.avgRating}%</div>
+								<div className='vote'>{videoDetails.totalVotes} votes</div>
 							</div>
 							<img src={date} alt='date' className='date-img' onClick={this.props.closeVideo} />
 							<div className='bla-date'>
-								<div className='date'>5 Aug</div>
-								<div className='year'>2018</div>
+								<div className='date'>
+									{day} {monthFinal}
+								</div>
+								<div className='year'>{year}</div>
 							</div>
 						</div>
 						<div className='details-desc'>
@@ -67,10 +79,3 @@ export default class VideoDetails extends Component {
 		);
 	}
 }
-
-// VideoDetails.defaultProps = {
-// 	playVideoCode: 'KJQjOozn8pk'
-// };
-// VideoDetails.propTypes = {
-// 	playVideoCode: PropTypes.string
-// };

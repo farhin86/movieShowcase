@@ -7,10 +7,12 @@
 	flex-flow: row wrap;
 }
 .video-banner {
-	width: auto;
-	height: auto;
-	margin-left: 2%;
-	margin-right: 2%;
-	margin-bottom: 3%;
-	margin-top: 1%;
+}
+.row-video-banner {
+	width: 100%;
+}
+.each-row {
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
 }

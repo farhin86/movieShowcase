@@ -23,7 +23,7 @@ export default class Input extends Component {
 		}
 	};
 	inputArray = () => {
-		//1,2,3,1,2,3,5,6,1,9,12-16,7-10,1
+		//1,2,3,1,2,3,5,6,1,9,7-10,1
 		let arrayInput = [];
 		this.state.insertedValue.split(',').map((element, index) => {
 			if (element.indexOf('-') > -1) {

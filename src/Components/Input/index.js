@@ -1,29 +1,3 @@
-//     input([7001,7002,7003,7004,7005],[7002,7004])
-
-// uniquesArray = arr => {
-// 	const frequency = arr.reduce((obj, value) => {
-// 		!obj[value] ? (obj[value] = 1) : obj[value]++;
-// 		return obj;
-// 	}, {});
-// 	let uniqueFrequency = Object.keys(frequency).filter(e => frequency[e] === 1);
-// 	let duplicateFrequency = Object.keys(frequency).filter(e => frequency[e] > 1);
-// 	console.log(uniqueFrequency, duplicateFrequency);
-// };
-// var movie=[1,2,"4-10",7-14]
-// a.concat(b)
-// let r= '12-13'
-// let y= '1,2,3,4';
-// r.indexOf("-")
-// let range= ["12", "13"]
-// var f = k.map(Number);
-// rangeArray(f);
-// function rangeArray(range) {
-// 	let finalInput = [];
-// 	for (let i = range[0]; i <= range[1]; i++) {
-// 		finalInput.push(i);
-// 	}
-// 	console.log(finalInput);
-// }
 import React, { Component } from 'react';
 import './index.css';
 
@@ -32,7 +6,7 @@ export default class Input extends Component {
 		duplicateNumbers: null,
 		uniqueNumbers: null,
 		insertedValue: null,
-		existingArray: [12, 14, 1, 3, 6, 5]
+		existingArray: [12, 14, 1, 3, 6, 5] ////  This is the existing array
 	};
 	inputData = letter => {
 		this.setState({
@@ -40,8 +14,13 @@ export default class Input extends Component {
 		});
 	};
 	submitInput = () => {
-		console.log('SUBMIT');
-		this.inputArray();
+		this.setState({
+			duplicateNumbers: null,
+			uniqueNumbers: null
+		});
+		if (this.state.insertedValue) {
+			this.inputArray();
+		}
 	};
 	inputArray = () => {
 		//1,2,3,1,2,3,5,6,1,9,12-16,7-10,1
@@ -51,17 +30,17 @@ export default class Input extends Component {
 				let arrayRange = [];
 				let elementArray = element.split('-');
 				arrayRange = this.rangeArray(elementArray);
-				console.log(arrayRange, arrayInput);
-				return arrayInput.concat(arrayRange);
+				// return arrayInput.concat(arrayRange);
+				arrayRange.map(e => {
+					return arrayInput.push(e);
+				});
 			} else {
-				return arrayInput.push(element);
+				return arrayInput.push(parseInt(element));
 			}
 		});
-		let uniq = [...new Set(arrayInput)].map(Number);
+		let uniq = [...new Set(arrayInput)];
 		let mergedArray = this.state.existingArray.concat(uniq);
 		this.uniquesArray(mergedArray);
-		console.log(arrayInput);
-		// console.log(this.state.insertedValue, arrayInput, uniq);
 	};
 	rangeArray = elementArray => {
 		let numericRange = elementArray.map(Number),
@@ -95,7 +74,7 @@ export default class Input extends Component {
 		// console.log(uniqueFrequency, uniq, duplicateFrequency);
 	};
 	render() {
-		let { duplicateNumbers, uniqueNumbers, insertedValue } = this.state;
+		let { duplicateNumbers, uniqueNumbers, insertedValue, existingArray } = this.state;
 		let duplicate = null,
 			uniques = null;
 		if (duplicateNumbers) {
@@ -115,6 +94,7 @@ export default class Input extends Component {
 				</div>
 				<div className='input-output'>Duplicate Number: {duplicate}</div>
 				<div className='input-output'>Unique Number: {uniques}</div>
+				<div className='input-output'>Existing Array: {existingArray.join(',')}</div>
 			</div>
 		);
 	}

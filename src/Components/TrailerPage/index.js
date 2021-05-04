@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './index.css';
 import TrailersBanner from '../TrailersBanner';
-import axios from 'axios';
+// import axios from 'axios';
 import VideoDetails from '../VideoDetails';
 
 export default class TrailerPage extends Component {
@@ -40,7 +40,7 @@ export default class TrailerPage extends Component {
 		let url = 'https://api.myjson.com/bins/hqa19';
 		// let url = 'https://api.myjson.com/bins/sfnkh';
 		// let url = 'https://in.bookmyshow.com/serv/getData?cmd=GETTRAILERS&mtype=cs';
-		axios
+		fetch
 			.get(url)
 			.then(res => {
 				this.setState({

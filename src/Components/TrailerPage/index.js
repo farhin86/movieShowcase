@@ -3,7 +3,7 @@ import './index.css';
 import TrailersBanner from '../TrailersBanner';
 // import axios from 'axios';
 import VideoDetails from '../VideoDetails';
-
+import trailer from '../../trailers.json';
 export default class TrailerPage extends Component {
 	state = {
 		bannerData: {},
@@ -37,19 +37,22 @@ export default class TrailerPage extends Component {
 	componentDidMount() {
 		this.updateWindowDimensions();
 		window.addEventListener('resize', this.updateWindowDimensions);
+		this.setState({
+			bannerData: trailer[1]
+		});
 		// let url = 'https://api.myjson.com/bins/hqa19';
 		// let url = 'https://api.myjson.com/bins/sfnkh';
-		let url = 'https://in.bookmyshow.com/serv/getData?cmd=GETTRAILERS&mtype=cs';
-		fetch
-			.get(url)
-			.then(res => {
-				this.setState({
-					bannerData: res.data[1]
-				});
-			})
-			.catch(err => {
-				console.log(err);
-			});
+		// let url = 'https://in.bookmyshow.com/serv/getData?cmd=GETTRAILERS&mtype=cs';
+		// fetch(url)
+		// 	.then(res => {
+		// 		console.log(res, res.json())
+		// 		this.setState({
+		// 			bannerData: res.data[1]
+		// 		});
+		// 	})
+		// 	.catch(err => {
+		// 		console.log(err);
+		// 	});
 	}
 	playVideoCode = (videoCode, id, index) => {
 		this.setState({

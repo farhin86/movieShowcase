@@ -37,9 +37,9 @@ export default class TrailerPage extends Component {
 	componentDidMount() {
 		this.updateWindowDimensions();
 		window.addEventListener('resize', this.updateWindowDimensions);
-		let url = 'https://api.myjson.com/bins/hqa19';
+		// let url = 'https://api.myjson.com/bins/hqa19';
 		// let url = 'https://api.myjson.com/bins/sfnkh';
-		// let url = 'https://in.bookmyshow.com/serv/getData?cmd=GETTRAILERS&mtype=cs';
+		let url = 'https://in.bookmyshow.com/serv/getData?cmd=GETTRAILERS&mtype=cs';
 		fetch
 			.get(url)
 			.then(res => {
